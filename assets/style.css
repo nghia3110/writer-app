@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    height: 100%;
+}
+
+li{
+    list-style-type: none;
+}
+
+.main{
+    padding: 15px;
+}
+
+.header{
+    display: flex;
+    gap: 60px;
+    font-size: 20px;
+    align-items: center;
+}
+
+.header .title{
+    flex: 10%;
+    padding-left: 10px;
+}
+
+.header .search-bar{
+    flex: 70%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: rgb(241 243 244);
+    margin-left: 100px;
+}
+
+.search-bar .search-input{
+    width: 90%;
+    padding: 15px;
+    border: none;
+    background-color: rgb(241 243 244);
+    border-radius: 10px;
+}
+
+.search-bar .search-input:focus{
+    outline: none;
+}
+
+.search-bar i{
+    margin-left: 10px;
+}
+
+.header .icon-list{
+    flex: 20%;
+    margin-left: 100px;
+    display: flex;
+    gap: 20px;
+}
+
+.icon-list .icon-list-item{
+    cursor: pointer;
+}
+
+.icon-list .icon-list-item:hover{
+    opacity: 0.6;
+}
+
+.content{
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.content-header{
+    display: flex;
+    align-items: center;
+    gap: 50%;
+    padding-top: 10px;
+}
+
+.content-body .task-list{
+
+}
+
+.task-list .list-item{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 25px;
+    gap: 10px;
+    border-bottom: 1px solid #e3e3e3;
+    
+}
+
+.task-list .list-item:last-child{
+    border-bottom: none;
+}
+
+.task-list .list-item:hover{
+    background-color: #e8f0fe;
+    cursor: pointer;
+}
+
+.list-item .file-icon{
+    flex: 5%;
+}
+
+.list-item .task-name{
+    flex: 40%;
+}
+
+.list-item .task-time{
+    flex: 30%;
+    opacity: 0.8;
+    margin-left: 30%;
+}
+
+.list-item .option-list{
+    flex: 25%;
+    text-align: end;
+}
+
+.list-item .option-list i{
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.list-item .option-list i:hover{
+    background-color: #bbb;
+}
