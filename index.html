@@ -12,6 +12,12 @@
 </head>
 
 <body>
+    <div id="view-modal">
+        <div id="modal-content">
+
+        </div>
+    </div>
+
     <div class="main">
         <div class="header">
             <div class="title">
@@ -22,7 +28,7 @@
                 <input class="search-input" type="text" placeholder="Search">
             </div>
             <div class="icon-list">
-                <i class="fa-solid fa-plus icon-list-item"></i>
+                <i class="fa-solid fa-plus icon-list-item" id="plusBtn"></i>
                 <i class="fa-solid fa-star icon-list-item"></i>
                 <i class="fa-solid fa-trash icon-list-item"></i>
                 <i class="fa-solid fa-gear icon-list-item"></i>
@@ -33,35 +39,38 @@
         <div class="content">
             <div class="content-header">
                 <h4>Tài liệu của tôi</h4>
-                <h4>Được mở lần cuối</h4>
+                <h4>Được cập nhật lần cuối</h4>
             </div>
 
             <div class="content-body">
-                <ul class="task-list">
-                    <li class="list-item" id="1">
-                        <i class="fa-solid fa-file file-icon"></i>
-                        <p class="task-name"><strong>Test</strong></p>
-                        <p class="task-time">14:20, 19/5/2022</p>
-                        <div class="option-list">
-                            <i class="fa-solid fa-pen-to-square" id="edit"></i>
-                            <i class="fa-solid fa-download" id="download"></i>
-                            <i class="fa-solid fa-trash-can" id="delete"></i>
-                        </div>
-                    </li>
-                    <li class="list-item" id="2">
-                        <i class="fa-solid fa-file file-icon"></i>
-                        <p class="task-name"><strong>Test2</strong></p>
-                        <p class="task-time">14:20, 20/5/2022</p>
-                        <div class="option-list">
-                            <i class="fa-solid fa-pen-to-square" id="edit"></i>
-                            <i class="fa-solid fa-download" id="download"></i>
-                            <i class="fa-solid fa-trash-can" id="delete"d></i>
-                        </div>
-                    </li>
+                <ul id="task-list">
+
                 </ul>
             </div>
         </div>
     </div>
 
     <script src="./script.js"></script>
+    <script>
+        var edit = JSON.parse(sessionStorage.getItem('isEdit'));
+        var title = JSON.parse(sessionStorage.getItem('TitleTemp'));
+        var date = JSON.parse(sessionStorage.getItem('DateTemp'));
+        if (edit) {
+            edit = false;
+            var i = JSON.parse(sessionStorage.getItem('IDTemp'));
+            document.getElementById(i).remove();
+            const li = `<li class="list-item" id="${i}">
+                    <i class="fa-solid fa-file file-icon"></i>
+                    <p class="task-name"><strong>${title}</strong></p>
+                    <p class="task-time">${date}</p>
+                    <div class="option-list">
+                        <i class="fa-solid fa-pen-to-square edit"></i>
+                        <i class="fa-solid fa-download download"></i>
+                        <i class="fa-solid fa-trash-can delete"></i>
+                    </div>
+                </li>`;
+            document.getElementById('task-list').insertAdjacentHTML('afterbegin', li);
+        }
+
+    </script>
 </body>
