@@ -51,26 +51,4 @@
     </div>
 
     <script src="./script.js"></script>
-    <script>
-        var edit = JSON.parse(sessionStorage.getItem('isEdit'));
-        var title = JSON.parse(sessionStorage.getItem('TitleTemp'));
-        var date = JSON.parse(sessionStorage.getItem('DateTemp'));
-        if (edit) {
-            edit = false;
-            var i = JSON.parse(sessionStorage.getItem('IDTemp'));
-            document.getElementById(i).remove();
-            const li = `<li class="list-item" id="${i}">
-                    <i class="fa-solid fa-file file-icon"></i>
-                    <p class="task-name"><strong>${title}</strong></p>
-                    <p class="task-time">${date}</p>
-                    <div class="option-list">
-                        <i class="fa-solid fa-pen-to-square edit"></i>
-                        <i class="fa-solid fa-download download"></i>
-                        <i class="fa-solid fa-trash-can delete"></i>
-                    </div>
-                </li>`;
-            document.getElementById('task-list').insertAdjacentHTML('afterbegin', li);
-        }
-
-    </script>
 </body>
